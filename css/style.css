@@ -4,14 +4,27 @@ body {
   text-align: center;
 }
 
-body h1 {
+body h1, body h2, body h3 {
   font-weight: 300;
+}
+
+body h1 {
+  margin-bottom: 100px;
 }
 
 body button {
   background: #1DA1F2;
   color: #fff;
   border-color: #fff;
+  width: 200px;
+  height: 44px;
+  border-radius: 3px;
+  border-width: 1px;
+}
+
+body .quote-button {
+  margin-bottom: 20px;
+  margin-top: 80px;
 }
 
 body a {
