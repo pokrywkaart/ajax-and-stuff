@@ -21,12 +21,15 @@ function showCountriesList(resp) {
         liEl.innerText = item.name + ', ' + "Capital: " + item.capital;
         countriesList.appendChild(liEl);
     });
+    console.log(item);
+
 };
 
-console.log(countriesList);
+const response = XMLHttpRequest.responseText;
 
-// function doFilter(countriesList) { 
-//     if (countriesList.length > 1) {
-//         return countriesList[1];
+// function doFilter(response) { 
+//     const response = Response();
+//     if(response.length > 0) {
+//         return response[0];
 //     }
 // };
