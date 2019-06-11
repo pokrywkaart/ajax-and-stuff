@@ -10,8 +10,15 @@ function searchCountries() {
         .then(function(resp) {
             return resp.json();
         })
+        // .then(function(resp) {  
+        //     resp.reverse()
+        //     })
         // .then(doFilter)
-        .then(showCountriesList);
+        .then(showCountriesList)  
+};
+
+function doFilter(resp) { 
+    resp.reverse();
 };
 
 function showCountriesList(resp) {
@@ -21,15 +28,5 @@ function showCountriesList(resp) {
         liEl.innerText = item.name + ', ' + "Capital: " + item.capital;
         countriesList.appendChild(liEl);
     });
-    console.log(item);
-
 };
 
-const response = XMLHttpRequest.responseText;
-
-// function doFilter(response) { 
-//     const response = Response();
-//     if(response.length > 0) {
-//         return response[0];
-//     }
-// };
