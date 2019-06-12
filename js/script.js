@@ -19,8 +19,9 @@ function showCountriesList(resp) {
     countriesList.innerHTML = '';
 
     let filteredArray = resp.filter(function(item) {
-        let smallName = item.name.toLocaleLowerCase();
-        return smallName.includes(countryName);
+        let smallName = item.name.toLowerCase();
+        let smallCountryName = countryName.toLowerCase();
+        return smallName.includes(smallCountryName);
     });
 
     filteredArray.forEach(function(item) {
