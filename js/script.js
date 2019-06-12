@@ -10,23 +10,20 @@ function searchCountries() {
         .then(function(resp) {
             return resp.json();
         })
-        // .then(doFilter)
         .then(showCountriesList)  
 };
 
-// function doFilter(resp) { 
-//     // return resp.reverse();
-//     let countryName = document.getElementById('country-name').value;
-//     return item.name.includes(countryName);
-// };
 
 function showCountriesList(resp) {
+    let countryName = document.getElementById('country-name').value;
     countriesList.innerHTML = '';
-    resp.forEach(function(item){
 
-        let sorted = item.name.includes(this.countryName);
-        resp.splice(sorted);
+    let filteredArray = resp.filter(function(item) {
+        let smallName = item.name.toLocaleLowerCase();
+        return smallName.includes(countryName);
+    });
 
+    filteredArray.forEach(function(item) {
         const liEl = document.createElement('li');
         liEl.innerText = item.name + ', ' + "Capital: " + item.capital;
         countriesList.appendChild(liEl);
